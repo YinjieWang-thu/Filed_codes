@@ -1,0 +1,4 @@
+Some simple homework program for reference
+roo.C is fitting histograms with ROOT framework
+roo2.C is fitting histograms with RooFit framework (binned fit)
+roo3.C is fitting unbinned data with RooFit and read from ROOT tree

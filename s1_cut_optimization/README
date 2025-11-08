@@ -1,0 +1,6 @@
+A TMVA method called cut optimization or merit optimization.
+Containing shell script, cut applying and sequence control.
+Cutdata.cpp is used to cut ASCII data file
+    Note: ASCII data file is used to be input for RooFit program, to achieve a quicker running time, but maybe use ROOT file and trees are more convenient, and cut can be simple using tree cloning. 
+Signif subfolder containing method to calculate significance for a peak.
+

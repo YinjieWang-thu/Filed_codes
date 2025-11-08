@@ -1,0 +1,19 @@
+conda activate my_root_env
+
+.L mixing.cc+
+
+reduce("../BPhy25_ntuple/data/data15_Main.root","mix/data15_Main_red.root");
+reduce("../BPhy25_ntuple/data/data16_All.root","mix/data16_All_red.root");
+reduce("../BPhy25_ntuple/data/data17_All.root","mix/data17_All_red.root");
+reduce("../BPhy25_ntuple/data/data18_All.root","mix/data18_All_red.root");
+reduce("../BPhy25_ntuple/data/data22_BphysDelayed.root","mix/data22_BphysDelayed_red.root");
+reduce("../BPhy25_ntuple/data/data23_BphysDelayed.root","mix/data23_BphysDelayed_red.root");
+reduce("../BPhy25_ntuple/data/data24_BphysDelayed.root","mix/data24_BphysDelayed_red.root");
+
+mixing("mix/data15_Main_red.root","mix/data15_Main_mix.root");
+mixing("mix/data16_All_red.root","mix/data16_All_mix.root");
+mixing("mix/data17_All_red.root","mix/data17_All_mix.root");
+mixing("mix/data18_All_red.root","mix/data18_All_mix.root");
+mixing("mix/data22_BphysDelayed_red.root","mix/data22_BphysDelayed_mix.root");
+mixing("mix/data23_BphysDelayed_red.root","mix/data23_BphysDelayed_mix.root");
+mixing("mix/data24_BphysDelayed_red.root","mix/data24_BphysDelayed_mix.root");
