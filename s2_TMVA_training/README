@@ -1,0 +1,2 @@
+This can be a TMVA simple example, for boosted decision tree(BDTG) in TMVA. 
+BDT.C is training using data, BDTApp.C is to apply BDT to new data.

@@ -1,0 +1,2 @@
+counttri.C use c++ map container to get most used string(trigger name).
+reduce.C get score from BDT and cut events.

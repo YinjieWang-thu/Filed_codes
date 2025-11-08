@@ -1,0 +1,91 @@
+.L plot_presel.cc
+plot()
+
+rm -fr BDT1/*
+
+.L TMVAClassification1.C+
+TMVAClassification(true)
+
+mv BDT1/plots BDT1/plots_testOdd
+mv BDT1/weights BDT1/weights_testOdd
+
+.L TMVAClassification1.C+
+TMVAClassification(false)
+
+mv BDT1/plots BDT1/plots_testEven
+mv BDT1/weights BDT1/weights_testEven
+
+.L plot_baseline.cc+
+plot()
+
+.L mixing.cc+
+reduce("../BPhy25_ntuple/data/data15_Main.root","ntuple/data15_Main_red.root");
+reduce("../BPhy25_ntuple/data/data16_All.root","ntuple/data16_All_red.root");
+reduce("../BPhy25_ntuple/data/data17_All.root","ntuple/data17_All_red.root");
+reduce("../BPhy25_ntuple/data/data18_All.root","ntuple/data18_All_red.root");
+reduce("../BPhy25_ntuple/data/data22_BphysDelayed.root","ntuple/data22_BphysDelayed_red.root");
+reduce("../BPhy25_ntuple/data/data23_BphysDelayed.root","ntuple/data23_BphysDelayed_red.root");
+reduce("../BPhy25_ntuple/data/data24_BphysDelayed.root","ntuple/data24_BphysDelayed_red.root");
+
+.L mixing.cc+
+mixing("ntuple/data15_Main_red.root","ntuple/data15_Main_mix.root");
+mixing("ntuple/data16_All_red.root","ntuple/data16_All_mix.root");
+mixing("ntuple/data17_All_red.root","ntuple/data17_All_mix.root");
+mixing("ntuple/data18_All_red.root","ntuple/data18_All_mix.root");
+mixing("ntuple/data22_BphysDelayed_red.root","ntuple/data22_BphysDelayed_mix.root");
+mixing("ntuple/data23_BphysDelayed_red.root","ntuple/data23_BphysDelayed_mix.root");
+mixing("ntuple/data24_BphysDelayed_red.root","ntuple/data24_BphysDelayed_mix.root");
+
+.L mixing.cc+
+reduce("../BPhy25_ntuple/mc/mc20a_Bs1_802750.root","ntuple/mc20a_Bs1_802750_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20a_Bs1_802751.root","ntuple/mc20a_Bs1_802751_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20d_Bs1_802750.root","ntuple/mc20d_Bs1_802750_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20d_Bs1_802751.root","ntuple/mc20d_Bs1_802751_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20e_Bs1_802750.root","ntuple/mc20e_Bs1_802750_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20e_Bs1_802751.root","ntuple/mc20e_Bs1_802751_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23a_Bs1_802750.root","ntuple/mc23a_Bs1_802750_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23a_Bs1_802751.root","ntuple/mc23a_Bs1_802751_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23d_Bs1_802750.root","ntuple/mc23d_Bs1_802750_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23d_Bs1_802751.root","ntuple/mc23d_Bs1_802751_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23e_Bs1_802750.root","ntuple/mc23e_Bs1_802750_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23e_Bs1_802751.root","ntuple/mc23e_Bs1_802751_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20a_Bs2_802395.root","ntuple/mc20a_Bs2_802395_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20a_Bs2_802396.root","ntuple/mc20a_Bs2_802396_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20d_Bs2_802395.root","ntuple/mc20d_Bs2_802395_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20d_Bs2_802396.root","ntuple/mc20d_Bs2_802396_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20e_Bs2_802395.root","ntuple/mc20e_Bs2_802395_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc20e_Bs2_802396.root","ntuple/mc20e_Bs2_802396_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23a_Bs2_802395.root","ntuple/mc23a_Bs2_802395_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23a_Bs2_802396.root","ntuple/mc23a_Bs2_802396_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23d_Bs2_802395.root","ntuple/mc23d_Bs2_802395_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23d_Bs2_802396.root","ntuple/mc23d_Bs2_802396_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23e_Bs2_802395.root","ntuple/mc23e_Bs2_802395_baseline.root",true);
+reduce("../BPhy25_ntuple/mc/mc23e_Bs2_802396.root","ntuple/mc23e_Bs2_802396_baseline.root",true);
+reduce("../BPhy25_ntuple/data/data15_Main.root","ntuple/data15_Main_baseline.root",true);
+reduce("../BPhy25_ntuple/data/data16_All.root","ntuple/data16_All_baseline.root",true);
+reduce("../BPhy25_ntuple/data/data17_All.root","ntuple/data17_All_baseline.root",true);
+reduce("../BPhy25_ntuple/data/data18_All.root","ntuple/data18_All_baseline.root",true);
+reduce("../BPhy25_ntuple/datac/data22_BphysDelayed.root","ntuple/data22_BphysDelayed_baseline.root",true);
+reduce("../BPhy25_ntuple/data/data23_BphysDelayed.root","ntuple/data23_BphysDelayed_baseline.root",true);
+reduce("../BPhy25_ntuple/data/data24_BphysDelayed.root","ntuple/data24_BphysDelayed_baseline.root",true);
+
+.L plot_var_baseline.cc+
+plot(true) #for Bs2 high peak region
+
+rm -fr BDT2/*
+
+.L TMVAClassification2.C+
+TMVAClassification(true)
+
+mv BDT2/plots BDT2/plots_testOdd
+mv BDT2/weights BDT2/weights_testOdd
+
+.L TMVAClassification2.C+
+TMVAClassification(false)
+
+mv BDT2/plots BDT2/plots_testEven
+mv BDT2/weights BDT2/weights_testEven
+
+.L plot_var_mva.cc+
+plot()
+
